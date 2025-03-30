@@ -1,0 +1,53 @@
+Contraintes stockees en memoire :
+Tache 1: Duree = 10, Predecesseurs = []
+Tache 2: Duree = 10, Predecesseurs = []
+Tache 3: Duree = 9, Predecesseurs = [1, 2, 10]
+Tache 4: Duree = 5, Predecesseurs = [1, 2]
+Tache 5: Duree = 4, Predecesseurs = [4]
+Tache 6: Duree = 2, Predecesseurs = [5]
+Tache 7: Duree = 2, Predecesseurs = [4]
+Tache 8: Duree = 4, Predecesseurs = [5, 7, 9]
+Tache 9: Duree = 8, Predecesseurs = [3, 4]
+Tache 10: Duree = 12, Predecesseurs = [9]
+Tache 11: Duree = 2, Predecesseurs = [6, 8, 10]
+Tache 12: Duree = 20, Predecesseurs = [1, 6]
+
+Matrice des valeurs :
+       0   1   2   3   4   5   6   7   8   9  10  11  12  13
+0      *   0   0   *   *   *   *   *   *   *   *   *   *   *
+1      *   *   *  10  10   *   *   *   *   *   *   *  10   *
+2      *   *   *  10  10   *   *   *   *   *   *   *   *   *
+3      *   *   *   *   *   *   *   *   *   9   *   *   *   *
+4      *   *   *   *   *   5   *   5   *   5   *   *   *   *
+5      *   *   *   *   *   *   4   *   4   *   *   *   *   *
+6      *   *   *   *   *   *   *   *   *   *   *   2   2   *
+7      *   *   *   *   *   *   *   *   2   *   *   *   *   *
+8      *   *   *   *   *   *   *   *   *   *   *   4   *   *
+9      *   *   *   *   *   *   *   *   8   *   8   *   *   *
+10     *   *   *  12   *   *   *   *   *   *   *  12   *   *
+11     *   *   *   *   *   *   *   *   *   *   *   *   *   2
+12     *   *   *   *   *   *   *   *   *   *   *   *   *  20
+13     *   *   *   *   *   *   *   *   *   *   *   *   *   *
+
+Verification du graphe :
+
+Detection de circuit par suppression des points d'entree :
+Points d'entree : 0
+Suppression des points d'entree
+Sommets restant : 1 2 3 4 5 6 7 8 9 10 11 12 13
+Points d'entree : 1 2
+Suppression des points d'entree
+Sommets restant : 3 4 5 6 7 8 9 10 11 12 13
+Points d'entree : 4
+Suppression des points d'entree
+Sommets restant : 3 5 6 7 8 9 10 11 12 13
+Points d'entree : 5 7
+Suppression des points d'entree
+Sommets restant : 3 6 8 9 10 11 12 13
+Points d'entree : 6
+Suppression des points d'entree
+Sommets restant : 3 8 9 10 11 12 13
+Points d'entree : 12
+Suppression des points d'entree
+Sommets restant : 3 8 9 10 11 13
+-> Circuit detecte

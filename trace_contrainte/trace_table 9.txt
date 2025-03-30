@@ -1,0 +1,74 @@
+Contraintes stockees en memoire :
+Tache 1: Duree = 1, Predecesseurs = [4, 5, 8, 10]
+Tache 2: Duree = 2, Predecesseurs = [7]
+Tache 3: Duree = 3, Predecesseurs = [6, 10]
+Tache 4: Duree = 4, Predecesseurs = []
+Tache 5: Duree = 5, Predecesseurs = [4]
+Tache 6: Duree = 6, Predecesseurs = []
+Tache 7: Duree = 7, Predecesseurs = []
+Tache 8: Duree = 8, Predecesseurs = [5, 7]
+Tache 9: Duree = 9, Predecesseurs = [1, 2, 3, 8]
+Tache 10: Duree = 10, Predecesseurs = []
+
+Matrice des valeurs :
+       0   1   2   3   4   5   6   7   8   9  10  11
+0      *   *   *   *   0   *   0   0   *   *   0   *
+1      *   *   *   *   *   *   *   *   *   1   *   *
+2      *   *   *   *   *   *   *   *   *   2   *   *
+3      *   *   *   *   *   *   *   *   *   3   *   *
+4      *   4   *   *   *   4   *   *   *   *   *   *
+5      *   5   *   *   *   *   *   *   5   *   *   *
+6      *   *   *   6   *   *   *   *   *   *   *   *
+7      *   *   7   *   *   *   *   *   7   *   *   *
+8      *   8   *   *   *   *   *   *   *   8   *   *
+9      *   *   *   *   *   *   *   *   *   *   *   9
+10     *  10   *  10   *   *   *   *   *   *   *   *
+11     *   *   *   *   *   *   *   *   *   *   *   *
+
+Verification du graphe :
+
+Detection de circuit par suppression des points d'entree :
+Points d'entree : 0
+Suppression des points d'entree
+Sommets restant : 1 2 3 4 5 6 7 8 9 10 11
+Points d'entree : 4 6 7 10
+Suppression des points d'entree
+Sommets restant : 1 2 3 5 8 9 11
+Points d'entree : 2 3 5
+Suppression des points d'entree
+Sommets restant : 1 8 9 11
+Points d'entree : 8
+Suppression des points d'entree
+Sommets restant : 1 9 11
+Points d'entree : 1
+Suppression des points d'entree
+Sommets restant : 9 11
+Points d'entree : 9
+Suppression des points d'entree
+Sommets restant : 11
+Points d'entree : 11
+Suppression des points d'entree
+Sommets restant : Aucun
+-> Il n'y a pas de circuit
+Il n'y a pas d'arcs negatifs
+-> C'est un graphe d'ordonnancement
+
+Rangs des sommets :
+Sommet 0 : Rang 0
+Sommet 1 : Rang 4
+Sommet 2 : Rang 2
+Sommet 3 : Rang 2
+Sommet 4 : Rang 1
+Sommet 5 : Rang 2
+Sommet 6 : Rang 1
+Sommet 7 : Rang 1
+Sommet 8 : Rang 3
+Sommet 9 : Rang 5
+Sommet 10 : Rang 1
+Sommet 11 : Rang 6
+
+Calendrier au plus tot : [0, 17, 7, 10, 0, 4, 0, 0, 9, 17, 0, 26]
+Calendrier au plus tard : [0, 16, 15, 14, 0, 4, 20, 2, 9, 17, 16, 26]
+Marges : [0, -1, 8, 4, 0, 0, 20, 2, 0, 0, 16, 0]
+
+Chemin(s) critique(s) : [0, 4, 5, 8, 9, 11]

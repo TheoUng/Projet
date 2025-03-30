@@ -1,0 +1,80 @@
+Contraintes stockees en memoire :
+Tache 1: Duree = 10, Predecesseurs = []
+Tache 2: Duree = 10, Predecesseurs = []
+Tache 3: Duree = 9, Predecesseurs = [1, 2]
+Tache 4: Duree = 5, Predecesseurs = [1, 2]
+Tache 5: Duree = 4, Predecesseurs = [4]
+Tache 6: Duree = 2, Predecesseurs = [5]
+Tache 7: Duree = 2, Predecesseurs = [4]
+Tache 8: Duree = 4, Predecesseurs = [5, 7, 9]
+Tache 9: Duree = 8, Predecesseurs = [3, 4]
+Tache 10: Duree = 12, Predecesseurs = [3, 9]
+Tache 11: Duree = 2, Predecesseurs = [6, 8, 10]
+Tache 12: Duree = 20, Predecesseurs = [1, 6]
+
+Matrice des valeurs :
+       0   1   2   3   4   5   6   7   8   9  10  11  12  13
+0      *   0   0   *   *   *   *   *   *   *   *   *   *   *
+1      *   *   *  10  10   *   *   *   *   *   *   *  10   *
+2      *   *   *  10  10   *   *   *   *   *   *   *   *   *
+3      *   *   *   *   *   *   *   *   *   9   9   *   *   *
+4      *   *   *   *   *   5   *   5   *   5   *   *   *   *
+5      *   *   *   *   *   *   4   *   4   *   *   *   *   *
+6      *   *   *   *   *   *   *   *   *   *   *   2   2   *
+7      *   *   *   *   *   *   *   *   2   *   *   *   *   *
+8      *   *   *   *   *   *   *   *   *   *   *   4   *   *
+9      *   *   *   *   *   *   *   *   8   *   8   *   *   *
+10     *   *   *   *   *   *   *   *   *   *   *  12   *   *
+11     *   *   *   *   *   *   *   *   *   *   *   *   *   2
+12     *   *   *   *   *   *   *   *   *   *   *   *   *  20
+13     *   *   *   *   *   *   *   *   *   *   *   *   *   *
+
+Verification du graphe :
+
+Detection de circuit par suppression des points d'entree :
+Points d'entree : 0
+Suppression des points d'entree
+Sommets restant : 1 2 3 4 5 6 7 8 9 10 11 12 13
+Points d'entree : 1 2
+Suppression des points d'entree
+Sommets restant : 3 4 5 6 7 8 9 10 11 12 13
+Points d'entree : 3 4
+Suppression des points d'entree
+Sommets restant : 5 6 7 8 9 10 11 12 13
+Points d'entree : 5 7 9
+Suppression des points d'entree
+Sommets restant : 6 8 10 11 12 13
+Points d'entree : 6 8 10
+Suppression des points d'entree
+Sommets restant : 11 12 13
+Points d'entree : 11 12
+Suppression des points d'entree
+Sommets restant : 13
+Points d'entree : 13
+Suppression des points d'entree
+Sommets restant : Aucun
+-> Il n'y a pas de circuit
+Il n'y a pas d'arcs negatifs
+-> C'est un graphe d'ordonnancement
+
+Rangs des sommets :
+Sommet 0 : Rang 0
+Sommet 1 : Rang 1
+Sommet 2 : Rang 1
+Sommet 3 : Rang 2
+Sommet 4 : Rang 2
+Sommet 5 : Rang 3
+Sommet 6 : Rang 4
+Sommet 7 : Rang 3
+Sommet 8 : Rang 4
+Sommet 9 : Rang 3
+Sommet 10 : Rang 4
+Sommet 11 : Rang 5
+Sommet 12 : Rang 5
+Sommet 13 : Rang 6
+
+Calendrier au plus tot : [0, 0, 0, 10, 10, 15, 19, 15, 27, 19, 27, 39, 21, 41]
+Calendrier au plus tard : [0, 0, 0, 10, 10, 15, 19, 33, 35, 19, 27, 39, 21, 41]
+Marges : [0, 0, 0, 0, 0, 0, 0, 18, 8, 0, 0, 0, 0, 0]
+
+Chemin(s) critique(s) : [0, 1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13]

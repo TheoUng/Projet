@@ -1,0 +1,49 @@
+Contraintes stockees en memoire :
+Tache 1: Duree = 2, Predecesseurs = []
+Tache 2: Duree = 5, Predecesseurs = []
+Tache 3: Duree = 4, Predecesseurs = [1]
+Tache 4: Duree = 2, Predecesseurs = [2, 3, 13]
+Tache 5: Duree = 5, Predecesseurs = [4]
+Tache 6: Duree = 5, Predecesseurs = [5]
+Tache 7: Duree = 9, Predecesseurs = [6]
+Tache 8: Duree = 2, Predecesseurs = [7]
+Tache 9: Duree = 5, Predecesseurs = [8]
+Tache 10: Duree = 1, Predecesseurs = [11]
+Tache 11: Duree = 1, Predecesseurs = [4]
+Tache 12: Duree = 1, Predecesseurs = [3]
+Tache 13: Duree = 9, Predecesseurs = [6, 12]
+
+Matrice des valeurs :
+       0   1   2   3   4   5   6   7   8   9  10  11  12  13  14
+0      *   0   0   *   *   *   *   *   *   *   *   *   *   *   *
+1      *   *   *   2   *   *   *   *   *   *   *   *   *   *   *
+2      *   *   *   *   5   *   *   *   *   *   *   *   *   *   *
+3      *   *   *   *   4   *   *   *   *   *   *   *   4   *   *
+4      *   *   *   *   *   2   *   *   *   *   *   2   *   *   *
+5      *   *   *   *   *   *   5   *   *   *   *   *   *   *   *
+6      *   *   *   *   *   *   *   5   *   *   *   *   *   5   *
+7      *   *   *   *   *   *   *   *   9   *   *   *   *   *   *
+8      *   *   *   *   *   *   *   *   *   2   *   *   *   *   *
+9      *   *   *   *   *   *   *   *   *   *   *   *   *   *   5
+10     *   *   *   *   *   *   *   *   *   *   *   *   *   *   1
+11     *   *   *   *   *   *   *   *   *   *   1   *   *   *   *
+12     *   *   *   *   *   *   *   *   *   *   *   *   *   1   *
+13     *   *   *   *   9   *   *   *   *   *   *   *   *   *   *
+14     *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
+
+Verification du graphe :
+
+Detection de circuit par suppression des points d'entree :
+Points d'entree : 0
+Suppression des points d'entree
+Sommets restant : 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+Points d'entree : 1 2
+Suppression des points d'entree
+Sommets restant : 3 4 5 6 7 8 9 10 11 12 13 14
+Points d'entree : 3
+Suppression des points d'entree
+Sommets restant : 4 5 6 7 8 9 10 11 12 13 14
+Points d'entree : 12
+Suppression des points d'entree
+Sommets restant : 4 5 6 7 8 9 10 11 13 14
+-> Circuit detecte

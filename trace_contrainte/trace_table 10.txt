@@ -1,0 +1,71 @@
+Contraintes stockees en memoire :
+Tache 1: Duree = 2, Predecesseurs = []
+Tache 2: Duree = 3, Predecesseurs = [1]
+Tache 3: Duree = 5, Predecesseurs = [2]
+Tache 4: Duree = 6, Predecesseurs = [1, 2]
+Tache 5: Duree = 2, Predecesseurs = [1, 4]
+Tache 6: Duree = 1, Predecesseurs = [4, 5]
+Tache 7: Duree = 6, Predecesseurs = [3, 5]
+Tache 8: Duree = 1, Predecesseurs = [2, 4, 7]
+
+Matrice des valeurs :
+       0   1   2   3   4   5   6   7   8   9
+0      *   0   *   *   *   *   *   *   *   *
+1      *   *   2   *   2   2   *   *   *   *
+2      *   *   *   3   3   *   *   *   3   *
+3      *   *   *   *   *   *   *   5   *   *
+4      *   *   *   *   *   6   6   *   6   *
+5      *   *   *   *   *   *   2   2   *   *
+6      *   *   *   *   *   *   *   *   *   1
+7      *   *   *   *   *   *   *   *   6   *
+8      *   *   *   *   *   *   *   *   *   1
+9      *   *   *   *   *   *   *   *   *   *
+
+Verification du graphe :
+
+Detection de circuit par suppression des points d'entree :
+Points d'entree : 0
+Suppression des points d'entree
+Sommets restant : 1 2 3 4 5 6 7 8 9
+Points d'entree : 1
+Suppression des points d'entree
+Sommets restant : 2 3 4 5 6 7 8 9
+Points d'entree : 2
+Suppression des points d'entree
+Sommets restant : 3 4 5 6 7 8 9
+Points d'entree : 3 4
+Suppression des points d'entree
+Sommets restant : 5 6 7 8 9
+Points d'entree : 5
+Suppression des points d'entree
+Sommets restant : 6 7 8 9
+Points d'entree : 6 7
+Suppression des points d'entree
+Sommets restant : 8 9
+Points d'entree : 8
+Suppression des points d'entree
+Sommets restant : 9
+Points d'entree : 9
+Suppression des points d'entree
+Sommets restant : Aucun
+-> Il n'y a pas de circuit
+Il n'y a pas d'arcs negatifs
+-> C'est un graphe d'ordonnancement
+
+Rangs des sommets :
+Sommet 0 : Rang 0
+Sommet 1 : Rang 1
+Sommet 2 : Rang 2
+Sommet 3 : Rang 3
+Sommet 4 : Rang 3
+Sommet 5 : Rang 4
+Sommet 6 : Rang 5
+Sommet 7 : Rang 5
+Sommet 8 : Rang 6
+Sommet 9 : Rang 7
+
+Calendrier au plus tot : [0, 0, 2, 5, 5, 11, 13, 13, 19, 20]
+Calendrier au plus tard : [0, 0, 2, 8, 5, 11, 19, 13, 19, 20]
+Marges : [0, 0, 0, 3, 0, 0, 6, 0, 0, 0]
+
+Chemin(s) critique(s) : [0, 1, 2, 4, 5, 7, 8, 9]
